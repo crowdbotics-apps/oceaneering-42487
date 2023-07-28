@@ -1,10 +1,11 @@
 export const globalOptions = {
-  name: "peoplesoft-demo-42487",
-  url: "https://peoplesoft-demo-42487.botics.co",
-  api: "https://peoplesoft-demo-42487.botics.co/api/v1",
-  screenOptions: {
-    headerShown: false
-  }
+  "name": "peoplesoft-demo-42487",
+  "url": "https://peoplesoft-demo-42487.botics.co",
+  "api": "https://peoplesoft-demo-42487.botics.co/api/v1",
+  "screenOptions": {
+    "headerShown": false
+  },
+  "initialRoute": "tasksHome"
 };
 export const modulesOptions = {
   "@modules/app-menu": {
