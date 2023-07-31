@@ -5,7 +5,7 @@ export const globalOptions = {
   "screenOptions": {
     "headerShown": false
   },
-  "initialRoute": "tasksHome"
+  "initialRoute": "Untitled3"
 };
 export const modulesOptions = {
   "@modules/app-menu": {
