@@ -12,6 +12,7 @@ const RoleAndResources = () => {
     titie: "Surface Notebook",
     image: require("./assets/surfaceNotebook.png")
   }];
+
   const eLearningResources = [{
     titie: "Platform Overview",
     description: "Discover the full potential of our platform in this quick overview."
@@ -22,41 +23,67 @@ const RoleAndResources = () => {
     titie: "Platform Overview",
     description: "Get to know our company security and compliance processes for a safe working experience."
   }];
-  return <SafeAreaView style={styles.safeArea}>
+
+  return (
+    <SafeAreaView style={styles.safeArea}>
       <View style={styles.sideBarView}>
-        <Image source={require("./assets/companyLogo.png")} style={styles.sideBarFirstIcon} />
+        <Image
+          source={require("./assets/companyLogo.png")}
+          style={styles.sideBarFirstIcon}
+        />
 
         <View style={styles.sideBarIcons}>
-          <Image source={require("./assets/dashboards.png")} style={styles.sideBarIconStyle} />
+          <Image
+            source={require("./assets/dashboards.png")}
+            style={styles.sideBarIconStyle}
+          />
           <Text style={styles.sideBarIconLabel}>Dashboard</Text>
         </View>
 
         <View style={styles.sideBarIcons}>
-          <Image source={require("./assets/user.png")} style={styles.sideBarIconStyle} />
+          <Image
+            source={require("./assets/user.png")}
+            style={styles.sideBarIconStyle}
+          />
           <Text style={styles.sideBarIconLabel}>Employees</Text>
         </View>
 
         <View style={styles.sideBarIcons}>
-          <Image source={require("./assets/bullish.png")} style={styles.sideBarIconStyle} />
+          <Image
+            source={require("./assets/bullish.png")}
+            style={styles.sideBarIconStyle}
+          />
           <Text style={styles.sideBarIconLabel}>E-Learning</Text>
         </View>
 
         <View style={styles.sideBarIcons}>
-          <Image source={require("./assets/bell-ring.png")} style={styles.sideBarIconStyle} />
+          <Image
+            source={require("./assets/bell-ring.png")}
+            style={styles.sideBarIconStyle}
+          />
           <Text style={styles.sideBarIconLabel}>Activities</Text>
         </View>
 
         <View style={styles.sideBarIcons}>
-          <Image source={require("./assets/page.png")} style={styles.sideBarIconStyle} />
+          <Image
+            source={require("./assets/page.png")}
+            style={styles.sideBarIconStyle}
+          />
           <Text style={styles.sideBarIconLabel}>Candidates</Text>
         </View>
 
-        <View style={[styles.sideBarIcons, styles.qvVvqAal]}>
-          <Image source={require("./assets/crowdbotics.jpeg")} style={styles.userLogo} />
-          <Text style={[styles.sideBarIconLabel, styles.IcALhwNa]}>
+        <View style={[styles.sideBarIcons, { marginTop: 60 }]}>
+          <Image
+            source={require("./assets/crowdbotics.jpeg")}
+            style={styles.userLogo}
+          />
+          <Text style={[styles.sideBarIconLabel, { color: "#9765f7" }]}>
             Crowdbotics
           </Text>
-          <Image source={require("./assets/logout.png")} style={styles.logoutIcon} />
+          <Image
+            source={require("./assets/logout.png")}
+            style={styles.logoutIcon}
+          />
         </View>
       </View>
       <ScrollView style={styles.scrollviewContainer}>
@@ -84,29 +111,43 @@ const RoleAndResources = () => {
             <TextInput placeholder="Select role" style={styles.selectRoleInput} />
           </View>
         </View>
-        <View style={styles.WfUiJrJr}>
+        <View style={{ marginTop: 50 }}>
           <Text style={styles.selectEquipment}>Select equipment</Text>
           <View style={styles.selectEquipmentContainer}>
-            {equipments.map((equipment, index) => <View key={index} style={styles.equipment}>
+            {equipments.map((equipment, index) => (
+              <View key={index} style={styles.equipment}>
                 <Image resizeMode="contain" style={styles.equipmentImage} source={equipment.image} />
                 <Text style={styles.equipmentTitie}>{equipment.titie}</Text>
-              </View>)}
+              </View>
+            ))}
           </View>
         </View>
-        <View style={styles.KGJuzupc}>
+        <View style={{ marginTop: 50 }}>
           <Text style={styles.selectELearning}>Select e-learning resources</Text>
-          <View style={styles.CDIshSMa}>
-            {eLearningResources.map((eLearningResource, index) => <View key={index} style={styles.eLearningResourceContainer}>
+          <View style={{ marginTop: 20 }}>
+            {eLearningResources.map((eLearningResource, index) => (
+              <View key={index} style={styles.eLearningResourceContainer}>
                 <Text style={styles.eLearningResourceTitie}>{eLearningResource.titie}</Text>
                 <Text style={styles.eLearningResourceDescription}>{eLearningResource.description}</Text>
-              </View>)}
+              </View>
+            ))}
           </View>
         </View>
       </View>
     </ScrollView>
-    <View style={styles.baoMFnuE}>
-        <View style={styles.rQKskenT}>
-          <Image source={require("./assets/rocket.png")} style={styles.IFDtGoWr} />
+    <View style={{ backgroundColor: "#9765f7", width: "25%" }}>
+        <View
+          style={{
+            justifyContent: "space-between",
+            flexDirection: "row",
+            marginTop: 20,
+            alignItems: "center"
+          }}
+        >
+          <Image
+            source={require("./assets/rocket.png")}
+            style={{ width: 100, height: 120 }}
+          />
 
           <View>
             <Text style={styles.rightBarFirstText}>Start</Text>
@@ -115,9 +156,9 @@ const RoleAndResources = () => {
           </View>
         </View>
       </View>
-    </SafeAreaView>;
+    </SafeAreaView>
+  );
 };
-
 const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
@@ -298,35 +339,7 @@ const styles = StyleSheet.create({
   eLearningResourceDescription: {
     fontSize: 18,
     marginTop: 20
-  },
-  qvVvqAal: {
-    marginTop: 60
-  },
-  IcALhwNa: {
-    color: "#9765f7"
-  },
-  WfUiJrJr: {
-    marginTop: 50
-  },
-  KGJuzupc: {
-    marginTop: 50
-  },
-  CDIshSMa: {
-    marginTop: 20
-  },
-  baoMFnuE: {
-    backgroundColor: "#9765f7",
-    width: "25%"
-  },
-  rQKskenT: {
-    justifyContent: "space-between",
-    flexDirection: "row",
-    marginTop: 20,
-    alignItems: "center"
-  },
-  IFDtGoWr: {
-    width: 100,
-    height: 120
   }
 });
+
 export default RoleAndResources;

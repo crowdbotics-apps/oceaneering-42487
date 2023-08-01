@@ -1,66 +1,80 @@
 import React from "react";
-import { SafeAreaView, Image, ScrollView, StyleSheet, Text, TextInput, View } from "react-native";
+import {
+  TouchableOpacity,
+  StyleSheet,
+  ScrollView,
+  SafeAreaView,
+  View,
+  Text,
+  Image,
+  TextInput
+} from "react-native";
 
-const RoleAndResources = () => {
-  const equipments = [{
-    titie: "Mobile",
-    image: require("./assets/mobile.png")
-  }, {
-    titie: "Dell Laptop",
-    image: require("./assets/dellLaptop.png")
-  }, {
-    titie: "Surface Notebook",
-    image: require("./assets/surfaceNotebook.png")
-  }];
-  const eLearningResources = [{
-    titie: "Platform Overview",
-    description: "Discover the full potential of our platform in this quick overview."
-  }, {
-    titie: "Platform Overview",
-    description: "Meet our CEO in a short video, as he shares the company goals and values."
-  }, {
-    titie: "Platform Overview",
-    description: "Get to know our company security and compliance processes for a safe working experience."
-  }];
-  return <SafeAreaView style={styles.safeArea}>
+const Untitled16 = () => {
+  return (
+    <SafeAreaView style={styles.safeArea}>
       <View style={styles.sideBarView}>
-        <Image source={require("./assets/companyLogo.png")} style={styles.sideBarFirstIcon} />
+        <Image
+          source={require("./assets/companyLogo.png")}
+          style={styles.sideBarFirstIcon}
+        />
 
         <View style={styles.sideBarIcons}>
-          <Image source={require("./assets/dashboards.png")} style={styles.sideBarIconStyle} />
+          <Image
+            source={require("./assets/dashboards.png")}
+            style={styles.sideBarIconStyle}
+          />
           <Text style={styles.sideBarIconLabel}>Dashboard</Text>
         </View>
 
         <View style={styles.sideBarIcons}>
-          <Image source={require("./assets/user.png")} style={styles.sideBarIconStyle} />
+          <Image
+            source={require("./assets/user.png")}
+            style={styles.sideBarIconStyle}
+          />
           <Text style={styles.sideBarIconLabel}>Employees</Text>
         </View>
 
         <View style={styles.sideBarIcons}>
-          <Image source={require("./assets/bullish.png")} style={styles.sideBarIconStyle} />
+          <Image
+            source={require("./assets/bullish.png")}
+            style={styles.sideBarIconStyle}
+          />
           <Text style={styles.sideBarIconLabel}>E-Learning</Text>
         </View>
 
         <View style={styles.sideBarIcons}>
-          <Image source={require("./assets/bell-ring.png")} style={styles.sideBarIconStyle} />
+          <Image
+            source={require("./assets/bell-ring.png")}
+            style={styles.sideBarIconStyle}
+          />
           <Text style={styles.sideBarIconLabel}>Activities</Text>
         </View>
 
         <View style={styles.sideBarIcons}>
-          <Image source={require("./assets/page.png")} style={styles.sideBarIconStyle} />
+          <Image
+            source={require("./assets/page.png")}
+            style={styles.sideBarIconStyle}
+          />
           <Text style={styles.sideBarIconLabel}>Candidates</Text>
         </View>
 
-        <View style={[styles.sideBarIcons, styles.pGfUHOqW]}>
-          <Image source={require("./assets/crowdbotics.jpeg")} style={styles.userLogo} />
-          <Text style={[styles.sideBarIconLabel, styles.phPxATFO]}>
+        <View style={[styles.sideBarIcons, { marginTop: 60 }]}>
+          <Image
+            source={require("./assets/crowdbotics.jpeg")}
+            style={styles.userLogo}
+          />
+          <Text style={[styles.sideBarIconLabel, { color: "#9765f7" }]}>
             Crowdbotics
           </Text>
-          <Image source={require("./assets/logout.png")} style={styles.logoutIcon} />
+          <Image
+            source={require("./assets/logout.png")}
+            style={styles.logoutIcon}
+          />
         </View>
       </View>
       <ScrollView style={styles.scrollviewContainer}>
-      <View style={[styles.container, styles.lightBackground]}>
+        {/* <Text style={styles.title}>New onboarding</Text> */}
         <View style={styles.breadcrumbWrapper}>
           <Text>Dashboard </Text>
           <Text> &gt; </Text>
@@ -78,35 +92,84 @@ const RoleAndResources = () => {
             </View>
           </View>
         </View>
-        <View>
-          <View style={styles.selectRoleInputWrapper}>
-            <Text style={styles.selectInput}>Select Role</Text>
-            <TextInput placeholder="Select role" style={styles.selectRoleInput} />
+        <View style={styles.profileContainer}>
+          <Image
+            source={require("./assets/profile.png")}
+            style={styles.profileImage}
+          />
+          <View style={styles.cameraIcon}>
+            <Image
+              source={require("./assets/camera.png")}
+              style={{ height: 10, width: 15 }}
+            />
           </View>
         </View>
-        <View style={styles.nKYidBSD}>
-          <Text style={styles.selectEquipment}>Select equipment</Text>
-          <View style={styles.selectEquipmentContainer}>
-            {equipments.map((equipment, index) => <View key={index} style={styles.equipment}>
-                <Image resizeMode="contain" style={styles.equipmentImage} source={equipment.image} />
-                <Text style={styles.equipmentTitie}>{equipment.titie}</Text>
-              </View>)}
+
+        <View style={styles.inputView}>
+          <View style={styles.inputColumn}>
+            <Text>First Name</Text>
+            <TextInput style={styles.textInputStyles} />
+          </View>
+          <View style={styles.inputColumn}>
+            <Text>Last Name</Text>
+            <TextInput style={styles.textInputStyles} />
           </View>
         </View>
-        <View style={styles.nSVrvssS}>
-          <Text style={styles.selectELearning}>Select e-learning resources</Text>
-          <View style={styles.aGIeITZG}>
-            {eLearningResources.map((eLearningResource, index) => <View key={index} style={styles.eLearningResourceContainer}>
-                <Text style={styles.eLearningResourceTitie}>{eLearningResource.titie}</Text>
-                <Text style={styles.eLearningResourceDescription}>{eLearningResource.description}</Text>
-              </View>)}
+
+        <View style={styles.inputView}>
+          <View style={styles.inputColumn}>
+            <Text>Email</Text>
+            <TextInput style={styles.textInputStyles} />
+          </View>
+          <View style={styles.inputColumn}>
+            <Text>Phone number </Text>
+            <TextInput style={styles.textInputStyles} />
           </View>
         </View>
-      </View>
-    </ScrollView>
-    <View style={styles.mxkdiWus}>
-        <View style={styles.yDKMwEjO}>
-          <Image source={require("./assets/rocket.png")} style={styles.aUIZxTgs} />
+
+        <View style={styles.inputView}>
+          <View style={styles.inputColumn}>
+            <Text>Country</Text>
+            <TextInput style={styles.textInputStyles} />
+          </View>
+          <View style={styles.inputColumn}>
+            <Text>Manager</Text>
+            <TextInput style={styles.textInputStyles} />
+          </View>
+        </View>
+
+        <View style={styles.inputView}>
+          <View style={styles.inputColumn}>
+            <Text>Office</Text>
+            <TextInput style={styles.textInputStyles} />
+          </View>
+          <View style={styles.inputColumn}>
+            <Text>Team</Text>
+            <TextInput style={styles.textInputStyles} />
+          </View>
+        </View>
+
+        <View style={styles.buttonView}>
+          <TouchableOpacity style={styles.touchableStyle}>
+            <Text style={{ color: "#FFF", fontWeight: "500" }}>
+              Job role and resources
+            </Text>
+            <Image
+              source={require("./assets/rightArrow.png")}
+              style={styles.arrowImage}
+            />
+          </TouchableOpacity>
+        </View>
+      </ScrollView>
+
+      <View style={styles.rightBar}>
+        <View
+          style={styles.rightBarFirstContainer}
+        >
+          <Image
+            source={require("./assets/rocket.png")}
+            style={{ width: 100, height: 120 }}
+          />
 
           <View>
             <Text style={styles.rightBarFirstText}>Start</Text>
@@ -115,7 +178,8 @@ const RoleAndResources = () => {
           </View>
         </View>
       </View>
-    </SafeAreaView>;
+    </SafeAreaView>
+  );
 };
 
 const styles = StyleSheet.create({
@@ -123,69 +187,15 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: "row"
   },
-  scrollviewContainer: {
-    padding: 10,
-    width: "70%",
-    height: "100%",
-    backgroundColor: "#F0EFFF"
+  rightBarFirstContainer: {
+    justifyContent: "space-between",
+    flexDirection: "row",
+    marginTop: 20,
+    alignItems: "center"
   },
-  sideBarView: {
-    backgroundColor: "#fff",
-    width: "10%"
-  },
-  sideBarFirstIcon: {
-    height: 130,
-    width: 70,
-    marginTop: 15,
-    alignSelf: "center"
-  },
-  sideBarIconStyle: {
-    height: 30,
-    width: 30,
-    alignSelf: "center"
-  },
-  logoutIcon: {
-    height: 20,
-    width: 20,
-    alignSelf: "center",
-    marginTop: 10
-  },
-  userLogo: {
-    height: 30,
-    width: 30,
-    borderRadius: 15,
-    alignSelf: "center"
-  },
-  sideBarIcons: {
-    alignSelf: "center",
-    marginTop: 40
-  },
-  sideBarIconLabel: {
-    alignSelf: "center",
-    fontWeight: "500",
-    color: "#adb5bd",
-    marginTop: 10,
-    fontSize: 14
-  },
-  rightBarThirdText: {
-    fontSize: 18,
-    marginRight: 20
-  },
-  rightBarFirstText: {
-    fontSize: 18,
-    textAlign: "right",
-    marginRight: 20
-  },
-  rightBarSecondText: {
-    fontSize: 18,
-    textAlign: "right",
-    fontWeight: "700",
-    marginRight: 20
-  },
-  container: {
-    padding: 20,
-    flex: 1,
-    backgroundColor: "#fff"
+  rightBar: {
+    backgroundColor: "#9765f7",
+    width: "25%"
   },
   breadcrumbWrapper: {
     width: "100%",
@@ -203,7 +213,7 @@ const styles = StyleSheet.create({
   onBoardHeadingRight: {
     fontSize: 30,
     color: "#272B30",
-    fontWeight: "bold"
+    fontWeight: "600"
   },
   onBoardHeadingLeft: {
     backgroundColor: "#9765F7",
@@ -211,7 +221,7 @@ const styles = StyleSheet.create({
     width: 50,
     height: 50,
     borderWidth: 2,
-    borderColor: "#ffffff",
+    borderColor: "#FFFFFF",
     justifyContent: "center",
     borderRadius: 60 / 2,
     marginRight: 20
@@ -221,7 +231,7 @@ const styles = StyleSheet.create({
     marginRight: 30
   },
   onBoardHeadingLeftText: {
-    color: "#ffffff",
+    color: "#FFFFFF",
     fontSize: 20,
     fontWeight: "800",
     textAlign: "center"
@@ -232,101 +242,155 @@ const styles = StyleSheet.create({
   jobRoleText: {
     color: "black"
   },
-  justifyContentCenter: {
-    justifyContent: "center"
+  logoutIcon: {
+    height: 20,
+    width: 20,
+    alignSelf: "center",
+    marginTop: 10
   },
-  selectRoleInputWrapper: {
-    width: "40%"
+  userLogo: {
+    height: 30,
+    width: 30,
+    borderRadius: 15,
+    alignSelf: "center"
   },
-  selectInput: {
-    fontSize: 16,
-    marginBottom: 10
+  sideBarFirstIcon: {
+    height: 130,
+    width: 70,
+    marginTop: 15,
+    alignSelf: "center"
   },
-  selectRoleInput: {
-    backgroundColor: "#ffffff",
-    borderRadius: 10,
-    paddingHorizontal: 20
+  sideBarIconStyle: {
+    height: 30,
+    width: 30,
+    alignSelf: "center"
   },
-  selectEquipment: {
-    fontSize: 22,
-    color: "#384671",
-    fontWeight: "700"
+  rightBarThirdText: {
+    fontSize: 18,
+    marginRight: 20
   },
-  selectEquipmentContainer: {
-    marginTop: 20,
-    display: "flex",
-    flexDirection: "row",
-    flexWrap: "wrap"
+  rightBarFirstText: {
+    fontSize: 18,
+    textAlign: "right",
+    marginRight: 20
   },
-  equipment: {
-    backgroundColor: "#fff",
-    margin: 10,
-    borderRadius: 10,
-    padding: 20,
-    width: "47%",
-    minHeight: 200,
-    display: "flex",
-    flexDirection: "row"
-  },
-  equipmentImage: {
-    width: 120,
-    height: 120
-  },
-  equipmentTitie: {
-    fontSize: 22,
-    color: "#384671",
+  rightBarSecondText: {
+    fontSize: 18,
+    textAlign: "right",
     fontWeight: "700",
+    marginRight: 20
+  },
+  sideBarView: {
+    backgroundColor: "#fff",
+    width: "10%"
+  },
+  scrollviewContainer: {
+    padding: 10,
+    width: "70%",
+    height: "100%",
+    // alignSelf: "center",
+    backgroundColor: "#f0efff"
+  },
+  inputColumn: {
+    width: "48%"
+  },
+  sideBarIconLabel: {
+    alignSelf: "center",
+    fontWeight: "500",
+    color: "#adb5bd",
+    marginTop: 10,
+    fontSize: 14
+  },
+  sideBarIcons: {
+    alignSelf: "center",
+    marginTop: 40
+  },
+  arrowImage: {
+    height: 7,
+    width: 20,
     marginLeft: 10
   },
-  selectELearning: {
-    fontSize: 22,
-    color: "#384671",
-    fontWeight: "700"
-  },
-  eLearningResourceContainer: {
-    backgroundColor: "#fff",
-    margin: 10,
-    borderRadius: 10,
-    padding: 20,
-    minHeight: 200
-  },
-  eLearningResourceTitie: {
-    fontSize: 22,
-    color: "#384671",
-    fontWeight: "700"
-  },
-  eLearningResourceDescription: {
-    fontSize: 18,
-    marginTop: 20
-  },
-  pGfUHOqW: {
-    marginTop: 60
-  },
-  phPxATFO: {
-    color: "#9765f7"
-  },
-  nKYidBSD: {
-    marginTop: 50
-  },
-  nSVrvssS: {
-    marginTop: 50
-  },
-  aGIeITZG: {
-    marginTop: 20
-  },
-  mxkdiWus: {
+  touchableStyle: {
+    width: 220,
     backgroundColor: "#9765f7",
-    width: "25%"
+    height: 40,
+    borderRadius: 5,
+    justifyContent: "center",
+    alignItems: "center",
+    flexDirection: "row"
   },
-  yDKMwEjO: {
-    justifyContent: "space-between",
+  buttonView: {
+    justifyContent: "flex-end",
     flexDirection: "row",
-    marginTop: 20,
-    alignItems: "center"
+    marginTop: 30,
+    marginHorizontal: 20
   },
-  aUIZxTgs: {
+  textInputStyles: {
+    backgroundColor: "#FFF",
+    borderWidth: 1,
+    borderColor: "#CED4DA",
+    borderRadius: 5,
+    marginTop: 5
+  },
+  inputView: {
+    flexDirection: "row",
+    flex: 1,
+    marginHorizontal: 20,
+    marginTop: 20,
+    justifyContent: "space-between"
+  },
+  cameraIcon: {
+    position: "absolute",
+    marginTop: 80,
+    height: 30,
+    width: 30,
+    backgroundColor: "#9765f8",
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 20
+  },
+  title: {
+    fontSize: 24,
+    fontWeight: "bold",
+    color: "#000",
+    marginLeft: 10,
+    marginTop: 10
+  },
+  profileContainer: {
+    marginTop: 30,
+    alignItems: "center",
+    backgroundColor: "#e0e0e0",
     width: 100,
-    height: 120
+    height: 100,
+    borderRadius: 60,
+    // justifyContent: "center",
+    alignSelf: "center"
+  },
+  profileImage: {
+    width: 60,
+    marginTop: 20,
+    height: 60
+    // borderRadius: 50
+  },
+  inputContainer: {
+    marginTop: 20
+  },
+  inputRow: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    marginBottom: 10
+  },
+  label: {
+    fontSize: 16,
+    fontWeight: "bold"
+  },
+  input: {
+    flex: 1,
+    marginLeft: 10,
+    borderWidth: 1,
+    borderColor: "#ccc",
+    borderRadius: 5,
+    padding: 10
   }
 });
-export default RoleAndResources;
+export default Untitled16;
